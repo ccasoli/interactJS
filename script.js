@@ -31,8 +31,16 @@ secondButtonEdit.addEventListener("click", function(){
     };     
 });
 
-let navHeader = document.getElementById("navbarHeader");
+let navHeader = document.getElementsByTagName("header");
 let checkStyle = document.styleSheets[0];
-navHeader.addEventListener("dblclick", function(){
-    checkStyle.disabled = true ; 
+let j = 0
+navHeader[0].addEventListener("dblclick", function(){
+    if(j == 0){
+        checkStyle.disabled = true;
+        j = 1;
+    }else{
+        checkStyle.disabled = false;
+        j = 0;
+    }
 });
+console.log(checkStyle);
